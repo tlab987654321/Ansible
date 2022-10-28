@@ -1,10 +1,11 @@
+## Usage : ansible-playbook vs_code.yml --extra-vars "variable_host=<group/server>" ##
 ---
   - name: "Install VS Code Server"
     hosts: "{{ variable_host | default('empty_group') }}"
     ## Usage : ansible-playbook vs_code.yml --extra-vars "variable_host=<group/server>" ##
     become: yes
     tasks:
-      - name: "Create Grafana Repository"
+      - name: "Create vscode Repository"
         copy: 
           dest: "/etc/yum.repos.d/vscode.repo"
           content: |

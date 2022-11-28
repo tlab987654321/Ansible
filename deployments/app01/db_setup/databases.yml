@@ -29,11 +29,14 @@
           - table_users.sql
           - table_events.sql
           - table_token.sql
+          - table_settings.sql
+          - view_OTP.sql
           - add_remote_access.sql
       - name: Update Remote Access user info
         shell: |
           sed -i 's/REMOTEUSER/{{ mysql_svc_user }}/g' /tmp/add_remote_access.sql;
           sed -i 's/REMUSERPASS/{{ mysql_svc_pass }}/g' /tmp/add_remote_access.sql
+          sed -i 's/REMOTEUSER/{{ mysql_svc_user }}/g' /tmp/view_OTP.sql;
       - name: Create service account for Application access
         mysql_db:
           name: mysql
@@ -60,6 +63,20 @@
           name: "{{ mysql_db_name }}" 
           state: import
           target:  /tmp/table_events.sql
+          login_user: root
+          login_password: "{{ mysql_root_password }}"
+      - name: Create the Settings Table in the Database
+        mysql_db:
+          name: "{{ mysql_db_name }}" 
+          state: import
+          target:  /tmp/table_settings.sql
+          login_user: root
+          login_password: "{{ mysql_root_password }}"
+      - name: Create the OTP View in the Database
+        mysql_db:
+          name: "{{ mysql_db_name }}" 
+          state: import
+          target:  /tmp/view_OTP.sql
           login_user: root
           login_password: "{{ mysql_root_password }}"
       - name: Remove the sql files on remote server

@@ -7,7 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
   `Group` varchar(45) DEFAULT NULL,
   `Enabled` tinyint(4) NOT NULL DEFAULT 0,
   `Admin` tinyint(4) NOT NULL DEFAULT 0,
-  `LastLogin` TIMESTAMP,
+  `LastLogin` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `ProfilePicture` varchar(45) DEFAULT 'default.png',
+  `Theme` varchar(45) DEFAULT 'normalmode',
   PRIMARY KEY (`SerialNo`,`Username`,`Email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 

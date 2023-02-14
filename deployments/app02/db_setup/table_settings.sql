@@ -1,8 +1,9 @@
 CREATE TABLE IF NOT EXISTS settings (
   `SerialNo` INT(1) NOT NULL AUTO_INCREMENT,
   `Organisation` VARCHAR(20) NOT NULL,
-  `Application` VARCHAR(20) NOT NULL,
   `Logo` VARCHAR(15) NOT NULL,
+  `Application` VARCHAR(20) NOT NULL,
+  `Description` VARCHAR(150) NOT NULL,
   `SMTP` VARCHAR(55) NOT NULL,
   `Port` VARCHAR(5) NOT NULL,
   `SMTPUser` VARCHAR(15) NULL,

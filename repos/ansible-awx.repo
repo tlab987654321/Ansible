@@ -1,5 +1,5 @@
 [mrmeee-ansible-awx]
-name=Copr repo for ansible-awx owned by mrmeee
+name=Repo for ansible-awx owned by mrmeee
 baseurl=https://copr-be.cloud.fedoraproject.org/results/mrmeee/ansible-awx/epel-7-$basearch/
 type=rpm-md
 skip_if_unavailable=True

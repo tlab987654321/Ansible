@@ -1,7 +1,7 @@
 - hosts:
     - localhost
   tasks:
-    - name: Sending an e-mail notification on the status
+    - name: Sending an e-mail status notification
       mail:
         host: smtp.mailgun.org
         port: 587

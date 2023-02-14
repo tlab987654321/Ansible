@@ -1,0 +1,28 @@
+### SMTP ###
+SMTP: smtp.mailgun.org
+PORT: 587
+USER: reminder@sandboxba8dbdc9c175434690fc19ea790bcbda.mailgun.org
+PASS: 08578ca2caa14e652115f799739a55a2-2bab6b06-ccbf79fe
+FROM: ansible@testlab.website
+TO: tlab987654321@gmail.com
+
+### Defaults ###
+HOME: ~/Ansible/deployments/
+ApplicationName: app02
+
+### DB ###
+DBHOST: dbserver
+DB_IP: 192.168.1.207
+ROOTPASSWORD: Passw0rd
+SERVICEACCOUNT: svcdbusernew
+SVCACCPASSWORD: Pass@word098
+DATADB: demo_datadb
+ACCOUNTSDB: demo_accountdb
+SETTINGSDB: demo_confdb
+MENUDB: demo_menudb
+
+### GIT ###
+GITSSHURL: "git@github.com:tlab987654321/tracker.git"
+GITUSER: gituser@123
+
+###WEB ###

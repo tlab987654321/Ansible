@@ -8,10 +8,10 @@ TO: tlab987654321@gmail.com
 
 ### Defaults ###
 HOME: ~/Ansible/deployments/
-ApplicationName: TestTracker
+ApplicationName: Tracker
 
 ### DB ###
-DBHOST: testdbserver
+DBHOST: dbserver
 DB_IP: 192.168.1.211
 ROOTPASSWORD: Passw0rd
 SERVICEACCOUNT: svcdbusernew
@@ -27,9 +27,9 @@ GITUSER: gituser@123
 
 ###WEB ###
 ENVIRONMENT: Prod
-WEBHOST: testwebserver
+WEBHOST: webserver
 ANSIBLE_USER: sanjay
-NEWSERVERNAME: lab-test-tracker01
+NEWSERVERNAME: lab-prd-tracker01
 IPADDR: 192.168.1.211
 DNS: 192.168.1.110
 DOMAIN: testlab.website

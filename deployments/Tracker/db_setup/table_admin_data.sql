@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS data_admin (
+CREATE TABLE IF NOT EXISTS data_template (
   SerialNo INT(5) NOT NULL AUTO_INCREMENT,
   Bank varchar(30) NOT NULL,
   Amount DECIMAL(10) NOT NULL,
@@ -11,5 +11,7 @@ CREATE TABLE IF NOT EXISTS data_admin (
   Comments varchar(150) NULL,
   AddedOn date NOT NULL DEFAULT curdate(),
   UNIQUE KEY UC_Person (SerialNo)
-  ) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=latin1
+  ) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=latin1;
 
+
+CREATE TABLE data_admin AS SELECT * FROM data_template

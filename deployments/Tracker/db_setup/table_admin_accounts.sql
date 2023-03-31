@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS banks_admin (
+CREATE TABLE IF NOT EXISTS banks_template (
   SerialNo INT(2) NOT NULL AUTO_INCREMENT,
   Name varchar(10) NOT NULL,
   Type varchar(10) NOT NULL,
@@ -8,3 +8,4 @@ CREATE TABLE IF NOT EXISTS banks_admin (
   IFSC varchar(11) NULL,
   UNIQUE KEY UC_Person (SerialNo, Bank));
 
+CREATE TABLE banks_admin AS SELECT * FROM banks_template;

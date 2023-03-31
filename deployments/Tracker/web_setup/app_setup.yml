@@ -3,7 +3,10 @@
         lineinfile: 
           path: /etc/hosts
           state: present
-          line: "{{ db_ip }}  {{ db_host }}"
+          line: "{{ item }}"
+        loop: 
+          - "{{ db_ip }}  {{ db_host }}.{{ domain_name }} {{ db_host }}"
+          - "{{ web_ip }}  {{ web_host }}.{{ domain_name }} {{ web_host }}"
       - name: "Create Vars Path"
         file:
           path: "/var/www/vars/"

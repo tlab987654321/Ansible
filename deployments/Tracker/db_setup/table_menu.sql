@@ -41,7 +41,7 @@ INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', '
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Water', '0');
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Sanitation', '0');
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Internet', '0');
-INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Mobile recharge', '0');
+INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Mobile Recharge', '0');
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Utilities', 'Maintenance', '0');
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Food', 'Restaurent', '0');
 INSERT INTO category ( `Category`, `Subcategory`, `Type`) VALUES ('Food', 'Milk', '0');

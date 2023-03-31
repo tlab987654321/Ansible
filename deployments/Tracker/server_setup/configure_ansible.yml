@@ -3,7 +3,7 @@
     hosts: localhost
     become: yes
     vars_files:
-      - vars.yml
+      - ~/Ansible/deployments/Tracker/vars.yml
     vars:
       server_name: "{{ NEWSERVERNAME }}"
       ad_domain: "{{ DOMAIN }}"

@@ -2,7 +2,7 @@
     hosts: dbserver
     become: yes
     vars_files:
-      - ../vars.yml
+      - ~/Ansible/deployments/Tracker/vars.yml
     vars:
       ansible_home: "{{ HOME }}"
       app_name: "{{ ApplicationName }}"
@@ -17,7 +17,7 @@
       mysql_db_4_name: "{{ MENUDB }}"
       path: "{{ ansible_home }}{{ app_name }}"
     tasks:
-      #- name: "Install and Configure MariaDB Server"
-      #  include_tasks: "{{ path }}/db_setup/mariadb_deploy.yml"
+      - name: "Install and Configure MariaDB Server"
+        include_tasks: "{{ path }}/db_setup/mariadb_deploy.yml"
       - name: "Create Databased and Tables for {{ app_name }}"
         include_tasks: "{{ path }}/db_setup/databases_setup.yml"

@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS banks_admin (
   Account varchar(80) NULL,
   IFSC varchar(11) NULL,
   UNIQUE KEY UC_Person (SerialNo, Bank));
+

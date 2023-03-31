@@ -8,7 +8,7 @@ TO: tlab987654321@gmail.com
 
 ### Defaults ###
 HOME: ~/Ansible/deployments/
-ApplicationName: app02
+ApplicationName: Tracker
 
 ### DB ###
 DBHOST: dbserver
@@ -16,13 +16,23 @@ DB_IP: 192.168.1.207
 ROOTPASSWORD: Passw0rd
 SERVICEACCOUNT: svcdbusernew
 SVCACCPASSWORD: Pass@word098
-DATADB: demo_datadb
-ACCOUNTSDB: demo_accountdb
-SETTINGSDB: demo_confdb
-MENUDB: demo_menudb
+DATADB: datadb
+ACCOUNTSDB: accountdb
+SETTINGSDB: confdb
+MENUDB: menudb
 
 ### GIT ###
 GITSSHURL: "git@github.com:tlab987654321/tracker.git"
 GITUSER: gituser@123
 
 ###WEB ###
+ENVIRONMENT: Prod
+
+### Server ####
+ANSIBLE_USER: sanjay
+NEWSERVERNAME: TrackerApp
+IPADDR: 192.168.1.209
+DNS: 192.168.1.110
+DOMAIN: testlab.website
+USER: svcansible
+PASSWORD: Pass@word098

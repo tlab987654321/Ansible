@@ -2,7 +2,7 @@
     hosts: webserver
     become: yes
     vars_files:
-      - ../vars.yml
+      - ~/Ansible/deployments/Tracker/vars.yml
     vars:
       ansible_home: "{{ HOME }}"
       app_name: "{{ ApplicationName }}"
@@ -17,10 +17,11 @@
       mysql_db_2_name: "{{ ACCOUNTSDB }}"
       mysql_db_3_name: "{{ SETTINGSDB }}"
       mysql_db_4_name: "{{ MENUDB }}"
+      env: "{{ ENVIRONMENT }}"
     tasks:
-      #- name: "Install and Configure MariaDB Server"
-      #  include_tasks: "{{ path }}/web_setup/http_deploy.yml"
-      #- name: "Create Databased and Tables for {{ app_name }}"
-      #  include_tasks: "{{ path }}/web_setup/code_deploy.yml"
-      - name: "Configure Application"
+      - name: "Install and Configure Web (http) Server"
+        include_tasks: "{{ path }}/web_setup/http_deploy.yml"
+      - name: "Deploy the code from source repository for  {{ app_name }}"
+        include_tasks: "{{ path }}/web_setup/code_deploy.yml"
+      - name: "Configure Application" 
         include_tasks: "{{ path }}/web_setup/app_setup.yml"

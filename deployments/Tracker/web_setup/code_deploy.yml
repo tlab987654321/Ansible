@@ -18,7 +18,7 @@
       - name: Setup Access to Git Hub repository
         # become_user: root
         copy:
-          src: "{{ path }}/.ssh"
+          src: "../.ssh"
           dest: /root/
           owner: root
           group: root

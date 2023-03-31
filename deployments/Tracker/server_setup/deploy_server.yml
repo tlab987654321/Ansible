@@ -3,7 +3,7 @@
     hosts: dell
     become: yes
     vars_files:
-      - ~/Ansible/deployments/Tracker/vars.yml
+      - ../vars.yml
     vars:
       server_name: "{{ NEWSERVERNAME }}"
     tasks:
@@ -22,8 +22,12 @@
         register: vm_running
       # command: "virsh start {{ server_name }}"
       # when: vm_running.stdout.find('running') != 0
-      - name: Sleep for 10 min and continue
+      - name: Not Running - Sleep for 10 min and continue
         wait_for:
           timeout: 600
         when: vm_running.stdout.find('running') != 0
+      - name: Booting - Sleep for 2 min and continue
+        wait_for:
+          timeout: 120
+        when: vm_running.stdout.find('running') == 0
       

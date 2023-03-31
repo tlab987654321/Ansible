@@ -1,8 +1,8 @@
   - name: "Deploy and Setup DB for Application Build"
-    hosts: dbserver
+    hosts: lab-test-tracker01
     become: yes
     vars_files:
-      - ~/Ansible/deployments/Tracker/vars.yml
+      - ../vars.yml
     vars:
       ansible_home: "{{ HOME }}"
       app_name: "{{ ApplicationName }}"
@@ -18,6 +18,6 @@
       path: "{{ ansible_home }}{{ app_name }}"
     tasks:
       - name: "Install and Configure MariaDB Server"
-        include_tasks: "{{ path }}/db_setup/mariadb_deploy.yml"
+        include_tasks: "mariadb_deploy.yml"
       - name: "Create Databased and Tables for {{ app_name }}"
-        include_tasks: "{{ path }}/db_setup/databases_setup.yml"
+        include_tasks: "databases_setup.yml"

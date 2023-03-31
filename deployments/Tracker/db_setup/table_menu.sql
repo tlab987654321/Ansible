@@ -1,4 +1,4 @@
-DROP TABLE transfer;
+DROP TABLE IF EXISTS transfer;
 
 CREATE TABLE IF NOT EXISTS transfer (
   SerialNo INT(2) NOT NULL AUTO_INCREMENT,
@@ -19,7 +19,7 @@ INSERT INTO transfer ( `Mode`, `Description`, `Type`) VALUES ('Credit Card', 'Cr
 INSERT INTO transfer ( `Mode`, `Description`, `Type`) VALUES ('Previous Balance', 'Previous Balance', 4);
 INSERT INTO transfer ( `Mode`, `Description`, `Type`) VALUES ('Auto Debit', 'Auto Debit', 0);
 
-DROP TABLE category;
+DROP TABLE IF EXISTS category;
 
 CREATE TABLE IF NOT EXISTS category (
   SerialNo INT(2) NOT NULL AUTO_INCREMENT,

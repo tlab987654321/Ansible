@@ -12,7 +12,7 @@
           
       - name: Copy required DB Tables export file on the the server
         copy:
-          src: "{{ path }}/db_setup/{{ item }}"
+          src: "{{ item }}"
           dest: /tmp/
         loop: 
           - add_remote_access.sql

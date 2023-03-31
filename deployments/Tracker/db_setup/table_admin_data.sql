@@ -14,4 +14,4 @@ CREATE TABLE IF NOT EXISTS data_template (
   ) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE data_admin AS SELECT * FROM data_template
+CREATE TABLE IF NOT EXISTS data_admin AS SELECT * FROM data_template

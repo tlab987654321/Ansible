@@ -8,4 +8,4 @@ CREATE TABLE IF NOT EXISTS banks_template (
   IFSC varchar(11) NULL,
   UNIQUE KEY UC_Person (SerialNo, Bank));
 
-CREATE TABLE banks_admin AS SELECT * FROM banks_template;
+CREATE TABLE IF NOT EXISTS banks_admin AS SELECT * FROM banks_template;

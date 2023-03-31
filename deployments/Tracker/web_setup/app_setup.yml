@@ -17,9 +17,9 @@
           recurse: yes
       - name: "Create vars file"
         copy:
-          src: "~/Ansible/deployments/Tracker/web_setup/vars.php"
+          src: "vars.php"
           dest: "/var/www/vars/vars-{{ env }}.php"
-          mode: '0755'
+          mode: '0777'
           owner: apache
           group: apache
       - name: Update DB Connectivity settings
@@ -37,7 +37,7 @@
         file:
           path: "/var/log/{{ app_name }}"
           state: directory
-          mode: '0755'
+          mode: '0777'
           owner: apache
           group: apache
           recurse: yes

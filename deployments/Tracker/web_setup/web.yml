@@ -1,8 +1,8 @@
   - name: "Install and Deploy Web Server Application"
-    hosts: webserver
+    hosts: lab-test-tracker01
     become: yes
     vars_files:
-      - ~/Ansible/deployments/Tracker/vars.yml
+      - ../vars.yml
     vars:
       ansible_home: "{{ HOME }}"
       app_name: "{{ ApplicationName }}"
@@ -23,8 +23,8 @@
       env: "{{ ENVIRONMENT }}"
     tasks:
       - name: "Install and Configure Web (http) Server"
-        include_tasks: "{{ path }}/web_setup/http_deploy.yml"
+        include_tasks: "http_deploy.yml"
       - name: "Deploy the code from source repository for  {{ app_name }}"
-        include_tasks: "{{ path }}/web_setup/code_deploy.yml"
+        include_tasks: "code_deploy.yml"
       - name: "Configure Application" 
-        include_tasks: "{{ path }}/web_setup/app_setup.yml"
+        include_tasks: "app_setup.yml"

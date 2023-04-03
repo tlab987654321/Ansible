@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS data_template (
   SerialNo INT(5) NOT NULL AUTO_INCREMENT,
   Bank varchar(30) NOT NULL,
-  Amount DECIMAL(10) NOT NULL,
+  Amount varchar(10) NOT NULL,
   PaymentMode varchar(30) NOT NULL,
   Category varchar(30) NOT NULL,
   SubCategory varchar(30) NOT NULL,
@@ -9,9 +9,12 @@ CREATE TABLE IF NOT EXISTS data_template (
   Balance varchar(10) NOT NULL,
   AccountBalance varchar(10) NOT NULL,
   Comments varchar(150) NULL,
-  AddedOn date NOT NULL DEFAULT curdate(),
+  AddedOn date NOT NULL DEFAULT current_timestamp(),
   UNIQUE KEY UC_Person (SerialNo)
   ) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE IF NOT EXISTS data_admin AS SELECT * FROM data_template
+CREATE TABLE IF NOT EXISTS data_admin AS SELECT * FROM data_template;
+ALTER TABLE data_admin CHANGE COLUMN SerialNo SerialNo INT(5) NOT NULL AUTO_INCREMENT ,
+ADD UNIQUE INDEX `SerialNo_UNIQUE` (`SerialNo` ASC);
+;

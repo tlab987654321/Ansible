@@ -29,7 +29,7 @@ GITUSER: gituser@123
 ENVIRONMENT: Prod
 WEBHOST: webserver
 ANSIBLE_USER: sanjay
-NEWSERVERNAME: lab-prd-tracker01
+NEWSERVERNAME: lab-test-tracker01
 IPADDR: 192.168.1.211
 DNS: 192.168.1.110
 DOMAIN: testlab.website

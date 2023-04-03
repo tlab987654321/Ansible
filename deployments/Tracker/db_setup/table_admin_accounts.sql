@@ -9,3 +9,7 @@ CREATE TABLE IF NOT EXISTS banks_template (
   UNIQUE KEY UC_Person (SerialNo, Bank));
 
 CREATE TABLE IF NOT EXISTS banks_admin AS SELECT * FROM banks_template;
+
+ALTER TABLE banks_admin CHANGE COLUMN SerialNo SerialNo INT(5) NOT NULL AUTO_INCREMENT ,
+ADD UNIQUE INDEX `SerialNo_UNIQUE` (`SerialNo` ASC);
+;

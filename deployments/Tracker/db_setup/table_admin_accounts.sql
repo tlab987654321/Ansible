@@ -8,8 +8,4 @@ CREATE TABLE IF NOT EXISTS banks_template (
   IFSC varchar(11) NULL,
   UNIQUE KEY UC_Person (SerialNo, Bank));
 
-CREATE TABLE IF NOT EXISTS banks_admin AS SELECT * FROM banks_template;
-
-ALTER TABLE banks_admin CHANGE COLUMN SerialNo SerialNo INT(2) NOT NULL AUTO_INCREMENT ,
-ADD UNIQUE INDEX `SerialNo_UNIQUE` (`SerialNo` ASC);
-;
+CREATE TABLE IF NOT EXISTS banks_admin LIKE banks_template;

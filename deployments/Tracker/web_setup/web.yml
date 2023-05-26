@@ -1,5 +1,5 @@
   - name: "Install and Deploy Web Server Application"
-    hosts: lab-test-tracker01
+    hosts: ProdTracker
     become: yes
     vars_files:
       - ../vars.yml

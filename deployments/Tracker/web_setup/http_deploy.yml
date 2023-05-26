@@ -10,3 +10,8 @@
           name: httpd
           state: started
           enabled: yes
+      - name: "Install GIT"
+        yum:
+          name:
+            - git
+          state: present

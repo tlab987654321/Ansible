@@ -22,6 +22,7 @@
           - table_settings.sql
           - table_users.sql
           - table_token.sql
+          - table_invest_temp.sql
           - view_OTP.sql
           
       - name: Update Remote Access user info
@@ -49,6 +50,13 @@
           name: "{{ mysql_db_2_name }}" 
           state: import
           target:  /tmp/table_admin_accounts.sql
+          login_user: root
+          login_password: "{{ mysql_root_password }}"
+      - name: Create the Investments Table template in the Database
+        mysql_db:
+          name: "{{ mysql_db_2_name }}" 
+          state: import
+          target:  /tmp/table_invest_temp.sql
           login_user: root
           login_password: "{{ mysql_root_password }}"
       - name: Create the Dropdown Menu Table Data
@@ -94,8 +102,10 @@
         loop: 
           - add_remote_access.sql
           - table_admin_data.sql
+          - table_admin_accounts.sql
           - table_menu.sql
           - table_settings.sql
           - table_users.sql
           - table_token.sql
+          - table_invest_temp.sql
           - view_OTP.sql

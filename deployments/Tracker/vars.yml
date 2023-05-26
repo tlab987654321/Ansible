@@ -12,7 +12,7 @@ ApplicationName: Tracker
 
 ### DB ###
 DBHOST: dbserver
-DB_IP: 192.168.1.211
+DB_IP: 127.0.0.1
 ROOTPASSWORD: Passw0rd
 SERVICEACCOUNT: svcdbusernew
 SVCACCPASSWORD: Pass@word098
@@ -28,10 +28,10 @@ GITUSER: gituser@123
 ###WEB ###
 ENVIRONMENT: Prod
 WEBHOST: webserver
-ANSIBLE_USER: sanjay
-NEWSERVERNAME: lab-test-tracker01
+ANSIBLE_USER: opc
+NEWSERVERNAME: lab-prd-tracker01
 IPADDR: 192.168.1.211
-DNS: 192.168.1.110
+DNS: 8.8.8.8
 DOMAIN: testlab.website
 USER: svcansible
 PASSWORD: Pass@word098

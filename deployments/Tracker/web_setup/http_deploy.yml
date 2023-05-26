@@ -10,6 +10,11 @@
           name: httpd
           state: started
           enabled: yes
+      - name: "Allow http port in firewall"
+        firewalld:
+          service: http
+          permanent: true
+          state: enabled
       - name: "Install GIT"
         yum:
           name:
